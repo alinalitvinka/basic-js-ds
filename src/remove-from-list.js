@@ -30,6 +30,9 @@ function removeKFromList(l, k) {
     res.next = res.next.next;
   } else if (res.next.next.value === k) {
     res.next.next = res.next.next.next;
+    if (res.next.next && res.next.next.value === k) {
+      res.next.next = res.next.next.next;
+    }
   }
   return res;
 }
